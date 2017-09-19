@@ -187,8 +187,8 @@ All these keybingding work with the prefix "C-c r"
 Position on a symbol and then type "M-x doxy<TAB>" to see the options 
 
 #+BEGIN_SRC emacs-lisp
-(use-package doxygen
-  :ensure t )
+;;(use-package doxygen
+;;  :ensure t )
 #+END_SRC
 
 ** Cmake
