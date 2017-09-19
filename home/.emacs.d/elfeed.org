@@ -1,0 +1,26 @@
+* blogs                                                        :elfeed:
+** daily                                                       :daily:
+*** http://xkcd.com/rss.xml
+*** http://www.codingconfessional.com/feed
+** opinion                                                     :opinion:
+*** https://blog.codinghorror.com/rss/
+*** https://martinfowler.com/feed.atom
+*** http://feeds.hanselman.com/ScottHanselman
+*** http://scottberkun.com/feed/
+*** http://andy.pragprog.com/
+*** http://lambda-the-ultimate.org/rss.xml
+*** https://dennisforbes.ca/index.php/feed/
+*** https://gustedt.wordpress.com/feed/
+** oss
+*** http://blog.llvm.org/feeds/posts/default
+** embedded                                                    :embedded:flood:
+*** http://www.embedded.com/rss/development-center/mcus-processors-and-socs
+*** http://www.embedded.com/rss/development-center/programming-languages-and-tools
+** technews                                                    :technews:flood:
+*** https://motherboard.vice.com/en_us/rss
+** culturenews                                                 :culturenews:flood:
+*** http://www.newyorker.com/feed/tech
+** reddit                                                      :reddit:flood:
+*** https://www.reddit.com/r/C_Programming/top/.rss?sort=top&t=week
+*** https://www.reddit.com/r/Cprog/.rss
+*** https://www.reddit.com/r/c_language/.rss

@@ -1,0 +1,154 @@
+* Theme
+
+#+BEGIN_SRC emacs-lisp
+;; Setting a theme would be like this
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'dracula t)
+#+END_SRC
+
+And Powerline
+#+BEGIN_SRC emacs-lisp
+(use-package powerline
+  :ensure t
+  :config
+    (powerline-default-theme)    
+)
+#+END_SRC
+
+* Navigation
+** Temp Files
+
+I don't like that it does the #file# every time I modify something.
+
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil)
+#+END_SRC
+
+** Neotree
+
+#+BEGIN_SRC emacs-lisp
+(use-package neotree
+  :ensure t
+  :config
+    ;; Setting dark background officially, otherwise NeoTree does black on black
+    (setq frame-background-mode 'dark)
+    (global-set-key [f8] 'neotree-toggle)
+    (setq neo-smart-open t)
+  )
+#+END_SRC
+
+
+* Life
+** RSS Feed
+
+#+BEGIN_SRC emacs-lisp
+(use-package elfeed
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x w") 'elfeed)
+  (setq-default elfeed-search-filter "-flood +unread ")
+)
+
+#+END_SRC
+
+And of course the org mode
+
+#+BEGIN_SRC emacs-lisp
+;; use an org file to organise feeds
+(use-package dash
+    :ensure t)
+(use-package s
+    :ensure t)
+(require 'elfeed-org)
+(elfeed-org)
+(setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+;;(use-package elfeed-org
+;;  :ensure t
+;;  :config
+;;  (elfeed-org)
+;;  (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org")))
+#+END_SRC
+
+* Org
+** Agenda config
+Agenda needs activation as [[http://orgmode.org/manual/Activation.html#Activation][here in the manual]]
+
+#+BEGIN_SRC emacs-lisp
+;; Not default, but "suggested" and "standard" keybindings
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; Following links with a double click
+(setq org-return-follows-link t)
+
+;; Open email addresses on external editor
+(setq browse-url-mailto-function nil)
+
+;; Agenda selections
+(setq org-agenda-custom-commands
+      '(
+        ("d" "Admin"
+         ((tags-todo "@admin&urgente-SCHEDULED={.+}")
+          (tags-todo "@admin&facile-SCHEDULED={.+}")
+          (tags-todo "@admin&delicato-SCHEDULED={.+}")
+          (tags-todo "@admin-urgente-facile-delicato-SCHEDULED={.+}")
+        ))
+        ("p" "Progetto"
+         ((tags-todo "@progetto&urgente-SCHEDULED={.+}")
+          (tags-todo "@progetto&facile-SCHEDULED={.+}")
+          (tags-todo "@progetto&delicato-SCHEDULED={.+}")
+          (tags-todo "@progetto-urgente-facile-delicato-SCHEDULED={.+}")
+        ))
+        ("l" "Lavoro"
+         ((tags-todo "@lavoro&urgente-SCHEDULED={.+}")          
+          (tags-todo "@lavoro&facile-SCHEDULED={.+}")           
+          (tags-todo "@lavoro&delicato-SCHEDULED={.+}")         
+          (tags-todo "@lavoro-urgente-facile-delicato-SCHEDULED={.+}")
+        ))            
+        ("s" "Svago"
+         ((tags-todo "@svago&film")             
+          (tags-todo "@svago&ascoltare")           
+          (tags-todo "@svago&suonare")          
+          (tags-todo "@svago&letture")        
+          (tags-todo "@svago-film-ascoltare-suonare-suonare")
+        ))            
+        ("a" "My agenda"
+         ((org-agenda-list)
+          (tags-todo "urgente-SCHEDULED={.+}") 
+        ))           
+        ;; ... put your other custom commands here
+       ))
+
+;; Setting effor possible types once and for all
+(setq org-global-properties
+              '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
+(setq org-todo-keywords
+              '((sequence "TODO" "STARTED" "WAITING" "APPT" "|" "DONE" "CANCELLED")))
+(setq org-tag-alist '((:startgroup . nil)
+              ("@lavoro" . ?l)
+              ("@admin" . ?a)
+              ("@svago" . ?s)
+              ("@progetto" . ?p)
+              (:endgroup . nil)
+              ("facile" . ?f) ("delicato" . ?d) ("urgente" . ?u) ))
+#+END_SRC
+
+** Bullets
+#+BEGIN_SRC emacs-lisp
+(use-package org-bullets
+  :ensure t
+  :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+)
+#+END_SRC
+
+** Common Files Shortcut
+
+#+BEGIN_SRC emacs-lisp
+;; Config with F5
+(global-set-key (kbd "<f5>") (lambda() (interactive)(find-file "~/.emacs.d/config.org")))
+;; Compile with F7
+(global-set-key (kbd "<f7>") (lambda() (interactive)(recompile)))
+#+END_SRC

@@ -1,4 +1,0 @@
-# Random wallpaper
-feh --randomize --bg-fill /usr/share/zabox/wallpapers/ &
-
-

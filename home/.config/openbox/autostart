@@ -1,0 +1,4 @@
+# Random wallpaper
+feh --randomize --bg-fill ~/.wallpapers/ &
+
+
