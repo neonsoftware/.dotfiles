@@ -1,0 +1,2 @@
+# general environment
+export TERM=rxvt-unicode-257color
