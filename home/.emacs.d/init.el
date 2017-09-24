@@ -22,6 +22,7 @@
 
 ;;; Load the config
 (org-babel-load-file (concat user-emacs-directory "config.org"))
+;; if (file-writable-p "~/.emacs_private.org") ..
 ;;(org-babel-load-file "~/.emacs_private.org")
 
 
