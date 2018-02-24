@@ -6,7 +6,6 @@
 *** https://blog.codinghorror.com/rss/
 *** https://martinfowler.com/feed.atom
 *** http://feeds.hanselman.com/ScottHanselman
-*** http://scottberkun.com/feed/
 *** http://andy.pragprog.com/
 *** http://lambda-the-ultimate.org/rss.xml
 *** https://dennisforbes.ca/index.php/feed/
