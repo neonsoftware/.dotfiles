@@ -131,11 +131,11 @@ All these keybingding work with the prefix "C-c r"
 ** Clang Format
 
 #+BEGIN_SRC emacs-lisp
-(use-package clang-format
-  :ensure t
-  :config
-    (global-set-key (kbd "C-c u") 'clang-format-buffer)
-)
+;;(use-package clang-format
+;;  :ensure t
+;;  :config
+;;    (global-set-key (kbd "C-c u") 'clang-format-buffer)
+;;)
 #+END_SRC
 
 ** Doxygen
