@@ -47,18 +47,26 @@ I don't like that it does the #file# every time I modify something.
   (global-set-key (kbd "C-x w") 'elfeed)
   (setq-default elfeed-search-filter "-flood +unread ")
 )
-
 #+END_SRC
 
 And of course the org mode
 
 #+BEGIN_SRC emacs-lisp
-;; use an org file to organise feeds
-(use-package elfeed-org
+(use-package dash
   :ensure t
-  :config
-  (elfeed-org)
-  (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org")))
+)
+(use-package s
+  :ensure t
+)
+;; use an org file to organise feeds
+;;(use-package elfeed-org
+;;  :ensure t
+;;  :config
+;;  (elfeed-org)
+;;  (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org")))
+(require 'elfeed-org)
+(elfeed-org)
+(setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
 #+END_SRC
 
 * Org
