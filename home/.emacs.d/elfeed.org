@@ -1,7 +1,6 @@
 * blogs                                                        :elfeed:
 ** daily                                                       :daily:
 *** http://xkcd.com/rss.xml
-*** http://www.codingconfessional.com/feed
 ** opinion                                                     :opinion:
 *** https://blog.codinghorror.com/rss/
 *** https://martinfowler.com/feed.atom
@@ -23,3 +22,5 @@
 *** https://www.reddit.com/r/C_Programming/top/.rss?sort=top&t=week
 *** https://www.reddit.com/r/Cprog/.rss
 *** https://www.reddit.com/r/c_language/.rss
+** programmerfun
+*** http://www.codingconfessional.com/feed
