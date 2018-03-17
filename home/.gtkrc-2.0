@@ -1,0 +1,5 @@
+# Ark GTK theme from Debian's arc-theme  
+include "/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc"
+
+# Moka icons from Debian's moka-icon-theme
+gtk-icon-theme-name = "Moka"
