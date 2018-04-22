@@ -69,6 +69,12 @@ And of course the org mode
 (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
 #+END_SRC
 
+** Mutt
+#+BEGIN_SRC emacs-lisp
+;; Mutt support.
+(setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
+#+END_SRC
+
 * Org
 ** Agenda config
 Agenda needs activation as [[http://orgmode.org/manual/Activation.html#Activation][here in the manual]]
